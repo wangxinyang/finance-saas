@@ -32,16 +32,16 @@ interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
   filterKey: string;
-  // onDelete: (rows: Row<TData>[]) => void;
-  // disabled?: boolean;
+  onDelete: (rows: Row<TData>[]) => void;
+  disabled?: boolean;
 }
 
 export function DataTable<TData, TValue>({
   columns,
   data,
   filterKey,
-  // onDelete,
-  // disabled,
+  onDelete,
+  disabled,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
@@ -78,10 +78,14 @@ export function DataTable<TData, TValue>({
         />
         {table.getFilteredSelectedRowModel().rows.length > 0 && (
           <Button
-            // disabled={disabled}
+            disabled={disabled}
             size="sm"
             variant="outline"
             className="ml-auto font-normal text-xs"
+            onClick={() => {
+              onDelete(table.getFilteredSelectedRowModel().rows);
+              table.resetRowSelection();
+            }}
           >
             <Trash className="size-4 mr-2" />
             Delete ({table.getFilteredSelectedRowModel().rows.length})
