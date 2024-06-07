@@ -1,6 +1,6 @@
 import { Hono } from "hono";
 import { eq } from "drizzle-orm";
-import { getAuth } from "@hono/clerk-auth";
+import { clerkMiddleware, getAuth } from "@hono/clerk-auth";
 import { zValidator } from "@hono/zod-validator";
 import { createId } from "@paralleldrive/cuid2";
 
@@ -8,9 +8,10 @@ import { db } from "@/db/drizzle";
 import { accounts, insertAccountSchema } from "@/db/schema";
 
 const app = new Hono()
-  .get("/", async (c) => {
+  .get("/", clerkMiddleware(), async (c) => {
     const auth = getAuth(c);
 
+    console.log(auth);
     if (!auth?.userId) {
       return c.json({ error: "Unauthorized" }, 401);
     }
@@ -29,6 +30,7 @@ const app = new Hono()
   })
   .post(
     "/",
+    clerkMiddleware(), // getAuth() method can be undefined if do not set clerk middleware
     zValidator(
       "json",
       insertAccountSchema.pick({
