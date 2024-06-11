@@ -2,8 +2,8 @@ import { z } from "zod";
 import { Loader2 } from "lucide-react";
 
 import { useOpenAccount } from "@/features/accounts/hooks/use-open-account";
-import { useEditAccount } from "@/features/accounts/api/use-edit-accounts";
-import { useDeleteAccount } from "@/features/accounts/api/use-delete-accounts";
+import { useEditAccount } from "@/features/accounts/api/use-edit-account";
+import { useDeleteAccount } from "@/features/accounts/api/use-delete-account";
 import { useGetAccount } from "@/features/accounts/api/use-get-account";
 import { AccountForm } from "@/features/accounts/components/account-form";
 
@@ -29,7 +29,7 @@ export const EditAccountSheet = () => {
 
   const [ConfirmationDialog, confirm] = useConfirm(
     "Are you sure?",
-    "You are about to delete this transcation.",
+    "You are about to delete this account.",
   );
 
   const accountQuery = useGetAccount(id);

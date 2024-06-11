@@ -3,7 +3,7 @@
 import { Edit, MoreHorizontal, Trash } from "lucide-react";
 
 import { useOpenAccount } from "@/features/accounts/hooks/use-open-account";
-import { useDeleteAccount } from "@/features/accounts/api/use-delete-accounts";
+import { useDeleteAccount } from "@/features/accounts/api/use-delete-account";
 import { useConfirm } from "@/hooks/use-confirm";
 
 import { Button } from "@/components/ui/button";
@@ -21,7 +21,7 @@ type Props = {
 export const Actions = ({ id }: Props) => {
   const [ConfirmationDialog, confirm] = useConfirm(
     "Are you sure?",
-    "You are about to delete this transaction.",
+    "You are about to delete this account.",
   );
 
   const deleteMutation = useDeleteAccount(id);

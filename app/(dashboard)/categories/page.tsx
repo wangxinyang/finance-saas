@@ -54,7 +54,7 @@ const CategoriesPage = () => {
           <DataTable
             columns={columns}
             data={categories}
-            filterKey={"email"}
+            filterKey={"name"}
             onDelete={(row) => {
               const ids = row.map((r) => r.original.id);
               deleteCategories.mutate({ ids });
