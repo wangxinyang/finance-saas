@@ -127,6 +127,7 @@ const app = new Hono()
         return c.json({ error: "Unauthorized" }, 401);
       }
 
+      console.log("server:", values);
       const [data] = await db
         .insert(transactions)
         .values({
@@ -149,6 +150,8 @@ const app = new Hono()
       if (!auth?.userId) {
         return c.json({ error: "Unauthorized" }, 401);
       }
+
+      console.log("server2:", values);
 
       const data = await db
         .insert(transactions)

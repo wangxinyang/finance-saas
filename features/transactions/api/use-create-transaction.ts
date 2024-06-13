@@ -14,6 +14,7 @@ export const useCreateTransaction = () => {
 
   const mutation = useMutation<ResponseType, Error, RequestType>({
     mutationFn: async (json) => {
+      console.log("client:", json);
       const response = await client.api.transactions.$post({ json });
       return await response.json();
     },
