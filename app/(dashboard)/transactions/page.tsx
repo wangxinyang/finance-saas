@@ -21,7 +21,6 @@ import { DataTable } from "@/components/data-table";
 import { columns } from "./columns";
 import { UploadButton } from "./upload-button";
 import { ImportCard } from "./import-card";
-import { create } from "domain";
 
 enum VARIANTS {
   LIST = "LIST",
