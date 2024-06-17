@@ -8,7 +8,7 @@ import { zValidator } from "@hono/zod-validator";
 
 import { db } from "@/db/drizzle";
 import { accounts, categories, transactions } from "@/db/schema";
-import { calculcatePercentageChange, fillMissingDays } from "@/lib/utils";
+import { calculatePercentageChange, fillMissingDays } from "@/lib/utils";
 
 const app = new Hono().get(
   "/",
@@ -77,15 +77,15 @@ const app = new Hono().get(
       lastPeriodEnd,
     );
 
-    const incomeChange = calculcatePercentageChange(
+    const incomeChange = calculatePercentageChange(
       currentPeriod.income,
       lastPeriod.income,
     );
-    const expenseChange = calculcatePercentageChange(
+    const expenseChange = calculatePercentageChange(
       currentPeriod.expense,
       lastPeriod.expense,
     );
-    const remainingChange = calculcatePercentageChange(
+    const remainingChange = calculatePercentageChange(
       currentPeriod.remaining,
       lastPeriod.remaining,
     );
@@ -156,7 +156,7 @@ const app = new Hono().get(
         incomeChange,
         expenseAmount: currentPeriod.expense,
         expenseChange,
-        category: finalCategories,
+        categories: finalCategories,
         days,
       },
     });
