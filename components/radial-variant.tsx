@@ -6,8 +6,6 @@ import {
   Tooltip,
 } from "recharts";
 
-import { CategoryTooltip } from "@/components/category-tooltip";
-
 import { formatCurrency } from "@/lib/utils";
 
 const COLORS = ["#0062FF", "#12C6FF", "#FF647F", "#FF9354"];
@@ -69,7 +67,6 @@ export const RadialVariant = ({ data }: Props) => {
             );
           }}
         />
-        <Tooltip content={<CategoryTooltip />} />
       </RadialBarChart>
     </ResponsiveContainer>
   );
