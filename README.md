@@ -45,7 +45,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 This project is distributed under the Apache-2.0 license.
 
-See [LICENSE](LICENSE.md) for details.
+See [LICENSE](LICENSE) for details.
 
 Copyright 2024 Xinyang Wang
 
