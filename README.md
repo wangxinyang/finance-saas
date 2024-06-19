@@ -36,6 +36,18 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 
 # Captures
+![](https://github.com/wangxinyang/finance-saas/blob/main/captures/Snipaste1.jpg)
+![](https://github.com/wangxinyang/finance-saas/blob/main/captures/Snipaste2.jpg)
+![](https://github.com/wangxinyang/finance-saas/blob/main/captures/Snipaste3.jpg)
+![](https://github.com/wangxinyang/finance-saas/blob/main/captures/Snipaste4.jpg)
+
+## License
+
+This project is distributed under the terms of MIT.
+
+See [LICENSE](LICENSE.md) for details.
+
+Copyright 2024 Xinyang Wang
 
 
 
