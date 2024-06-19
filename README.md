@@ -43,7 +43,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## License
 
-This project is distributed under the terms of MIT.
+This project is distributed under the Apache-2.0 license.
 
 See [LICENSE](LICENSE.md) for details.
 
